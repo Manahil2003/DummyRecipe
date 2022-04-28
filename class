@@ -1,0 +1,62 @@
+class Recipe {
+  // creating the data members here...
+  final String id;
+  final String title;
+  String? imageUrl;
+  final int duration;
+  // creating the list of the string here...
+  List<String>? ingredients;
+  List<String>? steps;
+  // creating the booolean her..
+  bool? isGlutenFree;
+  bool? isVegan;
+  bool? isVegetarian;
+  bool? isLactoseFree;
+// creating the constructor here... namad params
+
+//Named constructor
+
+  Recipe.init({
+    required String this.id,
+    required List<String> this.ingredients,
+    required List<String> this.steps,
+    required String this.title,
+    required String this.imageUrl,
+    required int this.duration,
+    required bool this.isGlutenFree,
+    required bool this.isVegan,
+    required bool this.isVegetarian,
+    required bool this.isLactoseFree,
+  });
+
+  Recipe.selective({
+    required String this.id,
+    // required List<String> this.ingredients,
+    // required List<String> this.steps,
+    required String this.title,
+    // required String this.imageUrl,
+    required int this.duration,
+    // required bool this.isGlutenFree,
+    // required bool this.isVegan,
+    // required bool this.isVegetarian,
+    // required bool this.isLactoseFree,
+  });
+//Default Constructor
+  Recipe({
+    required String this.id,
+    required List<String> this.ingredients,
+    required List<String> this.steps,
+    required String this.title,
+    required String this.imageUrl,
+    required int this.duration,
+    required bool this.isGlutenFree,
+    required bool this.isVegan,
+    required bool this.isVegetarian,
+    required bool this.isLactoseFree,
+  });
+
+  @override
+  String toString() {
+    return '\n\n Recipe \n\nId: $id, \nTitle:$title, \nImageUrl: $imageUrl, \nDuration: $duration,  \nIngredients: $ingredients, \nSteps: $steps, \nIsGlutenFree: $isGlutenFree, \nIsVegan: $isVegan, \nIsVegetarian: $isVegetarian, \nIsLactoseFree: $isLactoseFree';
+  }
+}
