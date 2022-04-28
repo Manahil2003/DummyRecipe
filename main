@@ -1,0 +1,52 @@
+import 'dummy_recipes.dart';
+import 'dummy_recipe1.dart';
+import 'selective_recipe.dart';
+
+main() {
+  print("Named Constructor :");
+  // Recipe init = new Recipe.init(
+  //     id: '4',
+  //     ingredients: ['apple', 'orange'],
+  //     steps: ['do', 'eat'],
+  //     title: 'fruits',
+  //     imageUrl: 'abcd.5',
+  //     duration: 4,
+  //     isGlutenFree: true,
+  //     isVegan: false,
+  //     isVegetarian: true,
+  //     isLactoseFree: true);
+  // print(init);
+
+  final lst = dummy_recipes
+      .map((e) => {'id': e.id, 'title': e.title, 'duration': e.duration});
+  print("\t-------------------------");
+  print("\t\tList ");
+  print("\t-------------------------");
+  print("");
+  print(lst);
+
+  print("");
+
+  final lst2 = dummy_recipes.map(
+      (e) => SelectiveRecipe.init(id: '01', title: 'title 1', duration: 45));
+  //  .where((e) => e.duration >= 45);
+  print("\t-------------------------");
+  print("\tList (map => where)");
+  print("\t-------------------------");
+  print("");
+  print(lst2);
+
+  print("");
+
+  final lst3 = dummy_recipes
+      // .where((e) => e.id == 'm9')
+      .map(
+          (e) => SelectiveRecipe.init(id: '02', title: 'Title 2', duration: 6));
+  print("\t-------------------------");
+  print("\tList (where => map)");
+  print("\t-------------------------");
+  print("");
+  print(lst3);
+
+  print("");
+}
